@@ -196,7 +196,7 @@
     const C_REINICIAR = document.getElementById('reset-btn');
 
     // Crea una función que valida todos los campos del formulario
-    function validateForm() {
+    function validarForm() {
         // Inicialmente, asume que el formulario está completamente válido
         let isValid = true;
         // Valida cada campo del formulario
@@ -219,16 +219,16 @@
     }
 
     // Valida el formulario cuando se carga la página
-    validateForm();
+    validarForm();
     // Valida el formulario cada vez que se cambia el valor de un campo
-    C_FECHA.addEventListener('input', validateForm);
-    C_EMAIL.addEventListener('input', validateForm);
-    C_MES.addEventListener('input', validateForm);
-    C_NUMERO.addEventListener('input', validateForm);
-    C_PASSWORD.addEventListener('input', validateForm);
-    C_TELEFONO.addEventListener('input', validateForm);
-    C_TEXTO.addEventListener('input', validateForm);
-    C_TIEMPO.addEventListener('input', validateForm);
+    C_FECHA.addEventListener('input', validarForm);
+    C_EMAIL.addEventListener('input', validarForm);
+    C_MES.addEventListener('input', validarForm);
+    C_NUMERO.addEventListener('input', validarForm);
+    C_PASSWORD.addEventListener('input', validarForm);
+    C_TELEFONO.addEventListener('input', validarForm);
+    C_TEXTO.addEventListener('input', validarForm);
+    C_TIEMPO.addEventListener('input', validarForm);
     // Reinicia el formulario cuando se hace clic en el botón de reiniciar
     C_REINICIAR.addEventListener('click', () => {
         C_FECHA.value = '';
@@ -239,7 +239,7 @@
         C_TELEFONO.value = '';
         C_TEXTO.value = '';
         C_TIEMPO.value = '';
-        validateForm();
+        validarForm();
     });
 </script>
 </body>

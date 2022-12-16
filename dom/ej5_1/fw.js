@@ -1,10 +1,9 @@
 // Crea una función de validación para cada tipo de campo
-function validateDate(input) {
+function validarFecha(input) {
     // Obtiene el valor del campo
-    const value = input.value;
-
+    const FECHA = input.value;
     // Valida que el valor sea una fecha válida
-    if (!value.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    if (!FECHA.match(/^\d{4}-\d{2}-\d{2}$/)) {
         // Si no es válido, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'Por favor ingresa una fecha válida';
         input.style.backgroundColor = '#ffcccc';
@@ -17,12 +16,12 @@ function validateDate(input) {
     return true;
 }
 
-function validateEmail(input) {
+function validarEmail(input) {
     // Obtiene el valor del campo
-    const value = input.value;
-
+    const EMAIL = input.value;
     // Valida que el valor sea una dirección de correo electrónico válida
-    if (!value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
+    if (!EMAIL.match
+    (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/)) {
         // Si no es válido, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'Por favor ingresa una dirección de correo electrónico válida';
         input.style.backgroundColor = '#ffcccc';
@@ -35,12 +34,11 @@ function validateEmail(input) {
     return true;
 }
 
-function validateMonth(input) {
+function validarMes(input) {
     // Obtiene el valor del campo
-    const value = input.value;
-
-    // Valida que el valor sea un mes válido (en el formato aaaa-mm)
-    if (!value.match(/^\d{4}-\d{2}$/)) {
+    const MES = input.value;
+    // Valida que el valor sea un mes válido (FORMATO: aaaa-mm)
+    if (!MES.match(/^\d{4}-\d{2}$/)) {
         // Si no es válido, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'Por favor ingresa un mes válido';
         input.style.backgroundColor = '#ffcccc';
@@ -52,12 +50,11 @@ function validateMonth(input) {
     return true;
 }
 
-function validateNumber(input) {
+function validarNumero(input) {
     // Obtiene el valor del campo
-    const value = input.value;
-
+    const NUMERO = input.value;
     // Valida que el valor sea un número
-    if (!value.match(/^\d+$/)) {
+    if (!NUMERO.match(/^\d+$/)) {
         // Si no es válido, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'Por favor ingresa un número válido';
         input.style.backgroundColor = '#ffcccc';
@@ -70,12 +67,12 @@ function validateNumber(input) {
     return true;
 }
 
-function validatePassword(input) {
+function validarPassword(input) {
     // Obtiene el valor del campo
-    const value = input.value;
+    const PASSWORD = input.value;
 
     // Valida que el valor tenga al menos 8 caracteres
-    if (value.length < 8) {
+    if (PASSWORD.length < 8) {
         // Si no cumple con la longitud mínima, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'La contraseña debe tener al menos 8 caracteres';
         input.style.backgroundColor = '#ffcccc';
@@ -88,54 +85,48 @@ function validatePassword(input) {
     return true;
 }
 
-function validateTel(input) {
+function validarTelefono(input) {
     // Obtiene el valor del campo
-    const value = input.value;
-
-    // Valida que el valor sea un número de teléfono válido (en el formato 555-555-5555)
-    if (!value.match(/^\d{3}-\d{3}-\d{4}$/)) {
+    const TELEFONO = input.value;
+    // Valida que el valor sea un número de teléfono válido (FORMATO: 555 555 555)
+    if (!TELEFONO.match(/^\d{3} \d{3} \d{3}$/)) {
         // Si no es válido, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'Por favor ingresa un número de teléfono válido';
         input.style.backgroundColor = '#ffcccc';
         return false;
     }
-
     // Si el valor es válido, oculta el mensaje de error y restaura el color de fondo
     input.nextElementSibling.innerHTML = '';
     input.style.backgroundColor = '#ffffff';
     return true;
 }
 
-function validateText(input) {
+function validarTexto(input) {
     // Obtiene el valor del campo
-    const value = input.value;
-
+    const TEXTO = input.value;
     // Valida que el valor no esté vacío
-    if (value.trim() === '') {
+    if (TEXTO.trim() === '') {
         // Si está vacío, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'Este campo es obligatorio';
         input.style.backgroundColor = '#ffcccc';
         return false;
     }
-
     // Si el valor es válido, oculta el mensaje de error y restaura el color de fondo
     input.nextElementSibling.innerHTML = '';
     input.style.backgroundColor = '#ffffff';
     return true;
 }
 
-function validateTime(input) {
+function validarHora(input) {
     // Obtiene el valor del campo
-    const value = input.value;
-
+    const HORA = input.value;
     // Valida que el valor sea una hora válida (en el formato hh:mm)
-    if (!value.match(/^\d{2}:\d{2}$/)) {
+    if (!HORA.match(/^\d{2}:\d{2}$/)) {
         // Si no es válido, muestra un mensaje de error y cambia el color de fondo
         input.nextElementSibling.innerHTML = 'Por favor ingresa una hora válida';
         input.style.backgroundColor = '#ffcccc';
         return false;
     }
-
     // Si el valor es válido, oculta el mensaje de error y restaura el color de fondo
     input.nextElementSibling.innerHTML = '';
     input.style.backgroundColor = '#ffffff';
@@ -143,69 +134,61 @@ function validateTime(input) {
 }
 
 // Obtiene todos los campos del formulario
-const dateField = document.getElementById('date-field');
-const emailField = document.getElementById('email-field');
-const monthField = document.getElementById('month-field');
-const numberField = document.getElementById('number-field');
-const passwordField = document.getElementById('password-field');
-const telField = document.getElementById('tel-field');
-const textField = document.getElementById('text-field');
-const timeField = document.getElementById('time-field');
-
+const C_FECHA = document.getElementById('date-field');
+const C_EMAIL = document.getElementById('email-field');
+const C_MES = document.getElementById('month-field');
+const C_NUMERO = document.getElementById('number-field');
+const C_PASSWORD = document.getElementById('password-field');
+const C_TELEFONO = document.getElementById('tel-field');
+const C_TEXTO = document.getElementById('text-field');
+const C_TIEMPO = document.getElementById('time-field');
 // Obtiene los botones del formulario
-const submitBtn = document.getElementById('submit-btn');
-const resetBtn = document.getElementById('reset-btn');
+const C_BOTON_CONFIRMAR = document.getElementById('submit-btn');
+const C_REINICIAR = document.getElementById('reset-btn');
 
 // Crea una función que valida todos los campos del formulario
-function validateForm() {
+function validarForm() {
     // Inicialmente, asume que el formulario está completamente válido
     let isValid = true;
-
     // Valida cada campo del formulario
-    if (!validateDate(dateField)) isValid = false;
-    if (!validateEmail(emailField)) isValid = false;
-    if (!validateMonth(monthField)) isValid = false;
-    if (!validateNumber(numberField)) isValid = false;
-    if (!validatePassword(passwordField)) isValid = false;
-
-    if (!validateTel(telField)) isValid = false;
-    if (!validateText(textField)) isValid = false;
-    if (!validateTime(timeField)) isValid = false;
-
+    if (!validarFecha(C_FECHA)) isValid = false;
+    if (!validarEmail(C_EMAIL)) isValid = false;
+    if (!validarMes(C_MES)) isValid = false;
+    if (!validarNumero(C_NUMERO)) isValid = false;
+    if (!validarPassword(C_PASSWORD)) isValid = false;
+    if (!validarTelefono(C_TELEFONO)) isValid = false;
+    if (!validarTexto(C_TEXTO)) isValid = false;
+    if (!validarHora(C_TIEMPO)) isValid = false;
     // Si el formulario es válido, habilita el botón de enviar
     if (isValid) {
-        submitBtn.disabled = false;
+        C_BOTON_CONFIRMAR.disabled = false;
     } else {
-        submitBtn.disabled = true;
+        C_BOTON_CONFIRMAR.disabled = true;
     }
-
     // Devuelve el estado de validación del formulario
     return isValid;
 }
 
 // Valida el formulario cuando se carga la página
-validateForm();
-
+validarForm();
 // Valida el formulario cada vez que se cambia el valor de un campo
-dateField.addEventListener('input', validateForm);
-emailField.addEventListener('input', validateForm);
-monthField.addEventListener('input', validateForm);
-numberField.addEventListener('input', validateForm);
-passwordField.addEventListener('input', validateForm);
-telField.addEventListener('input', validateForm);
-textField.addEventListener('input', validateForm);
-timeField.addEventListener('input', validateForm);
-
+C_FECHA.addEventListener('input', validarForm);
+C_EMAIL.addEventListener('input', validarForm);
+C_MES.addEventListener('input', validarForm);
+C_NUMERO.addEventListener('input', validarForm);
+C_PASSWORD.addEventListener('input', validarForm);
+C_TELEFONO.addEventListener('input', validarForm);
+C_TEXTO.addEventListener('input', validarForm);
+C_TIEMPO.addEventListener('input', validarForm);
 // Reinicia el formulario cuando se hace clic en el botón de reiniciar
-resetBtn.addEventListener('click', () => {
-    dateField.value = '';
-    emailField.value = '';
-    monthField.value = '';
-    numberField.value = '';
-    passwordField.value = '';
-    telField.value = '';
-    textField.value = '';
-    timeField.value = '';
-
-    validateForm();
+C_REINICIAR.addEventListener('click', () => {
+    C_FECHA.value = '';
+    C_EMAIL.value = '';
+    C_MES.value = '';
+    C_NUMERO.value = '';
+    C_PASSWORD.value = '';
+    C_TELEFONO.value = '';
+    C_TEXTO.value = '';
+    C_TIEMPO.value = '';
+    validarForm();
 });
