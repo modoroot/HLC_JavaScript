@@ -9,7 +9,7 @@
     <title>Formulario de validación personalizado | JavaScript</title>
 </head>
 <body>
-<form id="form">
+<form action="" id="form">
     <label for="date">Fecha:</label>
     <input type="date" name="date" id="date" required>
     <div class="error-mensaje"></div>
@@ -42,7 +42,7 @@
     <input type="time" name="time" id="time" required>
     <div class="error-mensaje"></div>
     <br>
-    <button type="submit" disabled>Confirm</button>
+    <button type="submit" disabled>Confirmar</button>
     <button type="reset">Reiniciar</button>
 </form>
 <script>
@@ -106,10 +106,6 @@
             inputCampo.nextElementSibling.innerHTML = '';
         });
         submitBtn.disabled = true;
-    });
-    // Añadimos un manejador de evento al botón de enviar para enviar el formulario
-    submitBtn.addEventListener('click', e => {
-        e.preventDefault(); // evitamos que se envíe el formulario de manera predeterminada
     });
 </script>
 </body>
