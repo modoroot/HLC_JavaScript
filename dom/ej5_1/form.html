@@ -30,7 +30,7 @@
     <input type="password" name="password" id="password" required>
     <div class="error-mensaje"></div>
     <br>
-    <label for="tel">Telephone:</label>
+    <label for="tel">Teléfono:</label>
     <input type="tel" name="tel" id="tel" required>
     <div class="error-mensaje"></div>
     <br>
@@ -38,7 +38,7 @@
     <input type="text" name="text" id="text" required>
     <div class="error-mensaje"></div>
     <br>
-    <label for="time">Time:</label>
+    <label for="time">Hora:</label>
     <input type="time" name="time" id="time" required>
     <div class="error-mensaje"></div>
     <br>
@@ -53,19 +53,19 @@
         month: /^\d{4}-\d{2}$/, // AAAA-MM
         number: /^\d+$/,
         password: /^.{8,}$/, // 8 caracteres mínimo
-        tel: /^\d{3} \d{3} \d{3}$/, // 555 555 555
+        tel: /^\d{3} \d{3} \d{3}$/, // Formato: 000 000 000
         text: /^[a-zA-Z ]+$/, //Solamente texto
-        time: /^\d{2}:\d{2}$/ // HH:MM
+        time: /^\d{2}:\d{2}$/ // Formato: HH:MM
     };
 
     // Obtenemos los elementos del formulario
-    const form = document.getElementById('form');
-    const inputCampos = form.querySelectorAll('input');
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const resetBtn = form.querySelector('button[type="reset"]');
+    const FORM = document.getElementById('form');
+    const INPUT_CAMPOS = FORM.querySelectorAll('input');
+    const SUBMIT_BTN = FORM.querySelector('button[type="submit"]');
+    const RESET_BTN = FORM.querySelector('button[type="reset"]');
 
     // Añadimos manejadores de eventos a cada campo del formulario
-    inputCampos.forEach(inputCampo => {
+    INPUT_CAMPOS.forEach(inputCampo => {
         inputCampo.addEventListener('input', e => {
             // Obtenemos el valor del campo y el tipo
             const value = e.target.value;
@@ -86,26 +86,26 @@
                 inputCampo.nextElementSibling.innerHTML = 'Error: revisa lo introducido';
             }
             // Verificamos si todos los campos del formulario son válidos
-            const formValido = inputCampos.every(inputCampo => !inputCampo.classList.contains('error'));
+            const formValido = INPUT_CAMPOS.every(inputCampo => !inputCampo.classList.contains('error'));
 
             // Si el formulario es válido, habilitamos el botón de enviar
             if (formValido) {
-                submitBtn.disabled = false;
+                SUBMIT_BTN.disabled = false;
             }
             // Si el formulario no es válido, deshabilitamos el botón de enviar
             else {
-                submitBtn.disabled = true;
+                SUBMIT_BTN.disabled = true;
             }
         });
     });
 
     // Añadimos un manejador de evento al botón de resetear para vaciar todos los campos del formulario y deshabilitar el botón de enviar
-    resetBtn.addEventListener('click', () => {
-        inputCampos.forEach(inputCampo => {
+    RESET_BTN.addEventListener('click', () => {
+        INPUT_CAMPOS.forEach(inputCampo => {
             inputCampo.classList.remove('error');
             inputCampo.nextElementSibling.innerHTML = '';
         });
-        submitBtn.disabled = true;
+        SUBMIT_BTN.disabled = true;
     });
 </script>
 </body>
